@@ -14,9 +14,20 @@ class Plotter:
         self.dataset_dir = FIGURES_DIR / dataset_name
         self.dataset_dir.mkdir(exist_ok=True)
 
+        self.png_dir = self.dataset_dir / "png"
+        self.png_dir.mkdir(exist_ok=True)
+
     def save_plot(self, name):
         plt.savefig(
-            self.dataset_dir / f"{name}.pdf", bbox_inches="tight", dpi=800, format="pdf"
+            self.dataset_dir / f"{name}.pdf",
+            bbox_inches="tight",
+            dpi=800,
+            format="pdf",
+        )
+        plt.savefig(
+            self.png_dir / f"{name}.png",
+            bbox_inches="tight",
+            format="png",
         )
         plt.show()
         plt.close()
