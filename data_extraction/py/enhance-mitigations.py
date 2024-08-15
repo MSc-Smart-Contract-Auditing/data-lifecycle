@@ -37,7 +37,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 FastLanguageModel.for_inference(model)  # Enable native 2x faster inference
 
 dataset_vulnerable = load_dataset(
-    "msc-smart-contract-audition/vulnerable-functions-base",
+    "msc-smart-contract-auditing/vulnerable-functions-base",
     split="train",
     escapechar="\\",
 )
